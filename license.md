@@ -30,7 +30,7 @@ You may NOT, without prior written permission from the author:
 For commercial use, licensing, or partnership inquiries, please contact:
 
 Richard Haberkern  
-[Insert Contact Email or Website]
+rmhaberkern@gmail.com
 
 ## 5. Ownership
 
