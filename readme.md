@@ -1,6 +1,6 @@
 # Embedded Intelligence Layer (EIL)
 
-## A System-Centric Approach to Safe, Efficient AI Integration in Embedded Systems
+## A System-Centric Approach to Safe, Efficient EdgeAI Integration in Embedded Systems
 
 **Proposed by:** Richard Haberkern  
 **Contact:** rmhaberkern@gmail.com  
@@ -13,7 +13,7 @@
 
 Embedded systems increasingly require intelligent behavior such as anomaly detection, prediction, and adaptive response. Traditional AI and TinyML approaches focus on model-centric workflows, often requiring large datasets, complex architectures, and intrusive integration into firmware.
 
-This document introduces the Embedded Intelligence Layer (EIL), a system-level architecture for integrating lightweight, explainable AI into embedded systems without disrupting deterministic control logic.
+This document introduces the Embedded Intelligence Layer (EIL), a system-level architecture for integrating lightweight, explainable EdgeAI into embedded systems without disrupting deterministic control logic.
 
 EIL operates as a non-intrusive layer alongside existing firmware, evaluating system signals and producing advisory outputs such as anomaly scores, alert states, predictions, and reason codes. By adopting a label-first, system-defined methodology, EIL reduces model complexity, minimizes data requirements, and enables safe, scalable deployment across MCU and MPU platforms.
 
