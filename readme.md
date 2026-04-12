@@ -1,192 +1,63 @@
 # Embedded Intelligence Layer (EIL)
 
-## A System-Centric Approach to Safe, Efficient EdgeAI Integration in Embedded Systems
+## A Lightweight, System-First Runtime for Safe, Explainable EdgeAI Alongside Embedded Firmware
 
-**Proposed by:** Richard Haberkern  
-**Contact:** rmhaberkern@gmail.com  
+Proposed by: Richard Haberkern  
+Contact: rmhaberkern@gmail.com
 
-*Free for evaluation. Commercial use requires permission. See LICENSE.md for more information.*
+Free for evaluation. Commercial use requires permission. See license.md for more information.
 
----
+Part of the [EmbeddedX platform](https://github.com/telespial/EmbeddedX-Specs).
+
+* * *
 
 ## Abstract
 
-Embedded systems increasingly require intelligent behavior such as anomaly detection, prediction, and adaptive response. Traditional AI and TinyML approaches focus on model-centric workflows, often requiring large datasets, complex architectures, and intrusive integration into firmware.
+Embedded Intelligence Layer (EIL) establishes a lightweight, system-first runtime for adding safe, explainable EdgeAI alongside embedded firmware. It is intended to keep intelligence bounded, visible, and compatible with deterministic software rather than turning embedded systems into opaque AI applications.
 
-This document introduces the Embedded Intelligence Layer (EIL), a system-level architecture for integrating lightweight, explainable EdgeAI into embedded systems without disrupting deterministic control logic.
+EIL defines how model behavior is surfaced into firmware, how advisory and anomaly outputs are represented, and how integration remains explainable and maintainable.
 
-EIL operates as a non-intrusive layer alongside existing firmware, evaluating system signals and producing advisory outputs such as anomaly scores, alert states, predictions, and reason codes. By adopting a label-first, system-defined methodology, EIL reduces model complexity, minimizes data requirements, and enables safe, scalable deployment across MCU and MPU platforms.
+* * *
 
----
+## 1. Scope
 
-## 1. Introduction
+EIL may define:
 
-The adoption of AI in embedded systems has accelerated through edge AI and TinyML. However, most approaches remain model-first, focusing on compressing neural networks to fit within constrained hardware.
+* runtime integration boundaries
+* inference request patterns
+* advisory and anomaly behaviors
+* explainability support
+* integration APIs
+* runtime safety expectations
+* hybrid or adaptive behavior boundaries
+* system-facing documentation needs
 
-Embedded systems operate within:
+* * *
 
-- deterministic control loops  
-- defined signal paths  
-- strict resource constraints  
-- safety and reliability requirements  
+## 2. Why EIL Matters
 
-Introducing opaque or complex models directly into control logic increases integration risk and reduces system predictability.
+Dropping a model into firmware is not enough. Embedded systems need runtime boundaries, predictable interfaces, and integration logic that does not quietly consume the rest of the application.
 
-EIL addresses this challenge by introducing intelligence as a separate, non-intrusive layer that enhances system behavior without replacing core firmware functionality.
+EIL establishes that boundary.
 
----
+* * *
 
-## 2. Embedded Intelligence Layer Architecture
+## 3. Relationship to Other Repositories
 
-An Embedded Intelligence Layer is a lightweight computational layer that runs in parallel with host firmware.
+* [EmbeddedX-Specs](https://github.com/telespial/EmbeddedX-Specs) establishes the umbrella platform
+* [Machine-Readable-Datasheets-Specs](https://github.com/telespial/Machine-Readable-Datasheets-Specs) establishes hardware truth
+* [Model-Definition-Package-Specs](https://github.com/telespial/Model-Definition-Package-Specs) establishes model truth
+* [AI-Coding-Specification](https://github.com/telespial/AI-Coding-Specification) should preserve EIL runtime boundaries during code generation
+* [Embedded-Intelligence-Package-Specs](https://github.com/telespial/Embedded-Intelligence-Package-Specs) may bundle EIL-facing runtime artifacts for deployment
 
-### Non-Intrusive Integration
+* * *
 
-- Host firmware retains full control of timing, safety logic, and control loops  
-- EIL operates as a monitoring and advisory system  
-- No disruption to deterministic execution  
+## 4. Core Principle
 
-### Firmware-Aligned Inputs and Outputs
+Runtime intelligence should be integrated as a bounded layer, not as uncontrolled application replacement logic.
 
-EIL operates on firmware-visible signals:
-
-- sensor readings  
-- decoded protocol values  
-- computed system metrics  
-
-Outputs are structured and explainable:
-
-- anomaly score  
-- alert state  
-- prediction  
-- reason code  
-- reason message  
-
----
-
-## 3. Label-First, Train-Later Methodology
-
-EIL introduces a label-first modeling approach:
-
-1. Define system states and behaviors  
-2. Map real signals to structured inputs  
-3. Train models to match predefined labels  
-
-### Benefits
-
-- reduced model complexity  
-- fewer parameters and smaller models  
-- significantly less training data required  
-- faster deployment cycles  
-- improved explainability  
-
-This approach shifts AI from a data-driven workflow to a system-defined intelligence model.
-
----
-
-## 4. Model Characteristics
-
-EIL favors lightweight, embedded-friendly model families:
-
-- linear models  
-- statistical models  
-- anomaly detection models  
-- small decision structures  
-- hybrid adaptive logic  
-
-Many EIL implementations:
-
-- require zero or minimal hidden layers  
-- use very small parameter counts  
-- execute deterministically  
-
-This contrasts with TinyML approaches that rely on compressed neural networks.
-
----
-
-## 5. Adaptation and Long-Term Operation
-
-EIL supports adaptive behavior through:
-
-- self-training models  
-- running statistical updates  
-- drift-aware recalibration  
-
-This enables systems to:
-
-- adjust to real-world conditions  
-- maintain accuracy over time  
-- reduce model drift without full retraining pipelines  
-
----
-
-## 6. Explainability and Reason Codes
-
-EIL models produce outputs tied directly to system meaning.
-
-Examples include:
-
-- DRIFT_DETECTED  
-- SENSOR_OUT_OF_RANGE  
-- SUDDEN_CHANGE  
-
-This provides:
-
-- clear diagnostics  
-- easier debugging  
-- improved validation and certification  
-
----
-
-## 7. Comparison with Traditional TinyML
-
-| Category | TinyML | EIL |
-|----------|--------|-----|
-| Approach | Model-first | System-first |
-| Workflow | Data to Model to Deploy | System to Labels to Model |
-| Model Type | Neural networks | Linear, statistical, hybrid |
-| Integration | Manual | Firmware-aligned |
-| Runtime Role | Often central | Advisory layer |
-| Explainability | Limited | Built-in |
-| Risk | Medium to high | Low |
-
----
-
-## 8. Applications
-
-EIL is well suited for embedded systems where behavior is known but conditions vary:
-
-- condition monitoring  
-- predictive maintenance  
-- medical devices  
-- power and energy systems  
-- motor control and industrial automation  
-- environmental sensing  
-- package and transport monitoring  
-
----
-
-## 9. Architecture Overview
-
-Sensors and system signals are decoded by host firmware and passed into the Embedded Intelligence Layer. The EIL evaluates these inputs and produces advisory outputs such as anomaly scores, alert states, predictions, and reason codes. The host firmware then determines appropriate actions, maintaining full control of system behavior.
-
----
-
-## 10. Conclusion
-
-Embedded Intelligence Layers represent a shift from model-centric to system-centric AI design in embedded systems.
-
-By introducing intelligence as a non-intrusive layer and defining behavior before training, EIL enables:
-
-- smaller and more efficient models  
-- safer deployment  
-- improved explainability  
-- long-term system reliability  
-
-EIL complements existing edge AI approaches by addressing the integration and deployment challenges that prevent many models from reaching production systems.
-
----
+* * *
 
 ## License
 
-See LICENSE.md for terms.
+See `license.md`.
