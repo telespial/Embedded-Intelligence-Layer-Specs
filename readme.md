@@ -47,7 +47,7 @@ EIL establishes that boundary.
 * [EmbeddedX-Specs](https://github.com/telespial/EmbeddedX-Specs) establishes the umbrella platform
 * [Machine-Readable-Datasheets-Specs](https://github.com/telespial/Machine-Readable-Datasheets-Specs) establishes hardware truth
 * [Model-Definition-Package-Specs](https://github.com/telespial/Model-Definition-Package-Specs) establishes model truth
-* [AI-Coding-Specification](https://github.com/telespial/AI-Coding-Specification) should preserve EIL runtime boundaries during code generation
+* [AI-Integrated-Coding-System-Spec](https://github.com/telespial/AI-Integrated-Coding-System-Spec) should preserve EIL runtime boundaries during code generation
 * [Embedded-Intelligence-Package-Specs](https://github.com/telespial/Embedded-Intelligence-Package-Specs) may bundle EIL-facing runtime artifacts for deployment
 
 * * *
