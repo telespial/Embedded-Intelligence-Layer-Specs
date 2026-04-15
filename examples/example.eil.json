@@ -1,8 +1,0 @@
-{
-  "runtime_mode": "advisory",
-  "reason_codes": [
-    "temperature_rise",
-    "sensor_drift"
-  ],
-  "integration_api": "eil_infer()"
-}
