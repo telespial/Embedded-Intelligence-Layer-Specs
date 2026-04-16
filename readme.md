@@ -1,6 +1,6 @@
 # Embedded Intelligence Layer (EIL)
 
-## A Lightweight, System-First Runtime for Safe, Explainable EdgeAI Alongside Embedded Firmware
+## Runtime Boundaries for Embedded AI
 
 Proposed by: Richard Haberkern  
 Contact: rmhaberkern@gmail.com
@@ -13,9 +13,9 @@ Part of the [EmbeddedX platform](https://github.com/telespial/EmbeddedX-Specs).
 
 ## Abstract
 
-Embedded Intelligence Layer (EIL) establishes a lightweight, system-first runtime for adding safe, explainable EdgeAI alongside embedded firmware. It is intended to keep intelligence bounded, visible, and compatible with deterministic software rather than turning embedded systems into opaque AI applications.
+Embedded Intelligence Layer (EIL) defines how embedded AI is integrated into firmware without taking over the rest of the application. The goal is to keep model behavior bounded, reviewable, and compatible with deterministic control code.
 
-EIL defines how model behavior is surfaced into firmware, how advisory and anomaly outputs are represented, and how integration remains explainable and maintainable.
+EIL covers how model behavior is surfaced into firmware, how advisory and anomaly outputs are represented, and where the host application keeps final control.
 
 * * *
 
@@ -45,9 +45,9 @@ EIL establishes that boundary.
 ## 3. Relationship to Other Repositories
 
 * [EmbeddedX-Specs](https://github.com/telespial/EmbeddedX-Specs) establishes the umbrella platform
-* [Machine-Readable-Datasheets-Specs](https://github.com/telespial/Machine-Readable-Datasheets-Specs) establishes hardware truth
+* [Machine-Readable-Datasheets-Specs](https://github.com/telespial/Machine-Readable-Datasheets-Specs) defines hardware capabilities visible to firmware
 * [Machine-Readable-Connectivity-Specs](https://github.com/telespial/Machine-Readable-Connectivity-Specs) may help describe input provenance, interface grouping, and degraded board-level conditions at runtime
-* [Model-Definition-Package-Specs](https://github.com/telespial/Model-Definition-Package-Specs) establishes model truth
+* [Model-Definition-Package-Specs](https://github.com/telespial/Model-Definition-Package-Specs) defines model metadata and runtime assumptions
 * [AI-Integrated-Coding-System-Spec](https://github.com/telespial/AI-Integrated-Coding-System-Spec) should preserve EIL runtime boundaries during code generation
 * [Embedded-Intelligence-Package-Specs](https://github.com/telespial/Embedded-Intelligence-Package-Specs) may bundle EIL-facing runtime artifacts for deployment
 
@@ -55,7 +55,7 @@ EIL establishes that boundary.
 
 ## 4. Core Principle
 
-Runtime intelligence should be integrated as a bounded layer, not as uncontrolled application replacement logic.
+Runtime intelligence should be added as a bounded layer, not as uncontrolled replacement logic.
 
 * * *
 
