@@ -1,5 +1,7 @@
 # Embedded Intelligence Layer (EIL)
 
+[← Back to EmbeddedX-Specs (canonical index)](https://github.com/telespial/EmbeddedX-Specs)
+
 ## Runtime Boundaries for Embedded AI
 
 Proposed by: Richard Haberkern  
