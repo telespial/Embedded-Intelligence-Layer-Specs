@@ -7,7 +7,7 @@
 Proposed by: Richard Haberkern  
 Contact: rmhaberkern@gmail.com
 
-Free for evaluation. Commercial use requires permission. See `license.md` for more information.
+Free for evaluation. Commercial use requires permission. See [LICENSE.md](./LICENSE.md) for more information.
 
 Part of the **EmbeddedX specification family**.
 
@@ -66,4 +66,4 @@ Runtime intelligence should be added as a bounded layer, not as uncontrolled rep
 
 ## License
 
-See `license.md`.
+See [LICENSE.md](./LICENSE.md).
